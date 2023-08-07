@@ -1,0 +1,32 @@
+.card {
+  display: flex;
+  margin: 20px 10px;
+  font-size: 12px;
+}
+.card img {
+  margin-right: 15px;
+}
+.name {
+  flex-basis: 40%;
+  display: flex;
+  flex-direction: column;
+}
+.info {
+}
+.artists {
+  font-size: 14px;
+  opacity: 0.7;
+}
+.album_name {
+  margin-right: 20px;
+}
+.release_date {
+  margin-right: 20px;
+}
+.btn_addPlaylist {
+  display: inline;
+  cursor: pointer;
+  color: black;
+  padding: 5px 10px;
+  background-color: violet;
+}

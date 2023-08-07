@@ -1,0 +1,31 @@
+/* Color State */
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.searchResultContainer {
+  margin: 10px;
+}
+.searchBar {
+  padding: 15px 20px;
+  margin-left: 10px;
+  width: 100%;
+  font-size: 16px;
+}
+.searchContainer {
+  display: flex;
+}
+
+.searchBtn {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px 15px;
+  background-color: #1ed760;
+  border: none;
+}
+.searchBtn:hover {
+  color: #000;
+}

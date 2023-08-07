@@ -1,38 +1,233 @@
-.App {
-  text-align: center;
+:root {
+  font-size: 62.5%;
+  /* font-family: "Open Sans"; */
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+  --bg-spotify: #1ed760;
+  --transition-speed: 600ms;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body::-webkit-scrollbar {
+  width: 0.25rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+.navbar {
+  position: fixed;
+  width: 10rem;
+  overflow: auto;
+  background-color: var(--bg-primary);
+  transition: width var(--transition-speed) ease;
+}
+.link-text {
+  font-size: 3rem;
+}
+.navbar-nav {
+  padding: 0;
+  margin: 0;
+  list-style: none;
   display: flex;
   flex-direction: column;
+  height: 100%;
+}
+.nav-item {
+  width: 100%;
+}
+.nav-link {
+  width: 100%;
+  height: 8rem;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--text-primary);
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7);
+  transition: var(--transition-speed);
 }
-
-.App-link {
-  color: #61dafb;
+.icon-link {
+  width: 100px;
 }
-
-@keyframes App-logo-spin {
+.navbar:hover .nav-link {
+  justify-content: flex-start;
+}
+.nav-link svg,
+.nav-link i {
+  width: 5rem;
+  min-width: 5rem;
+  margin: 0 3rem;
+  /* color: #fff; */
+}
+.navbar:hover {
+  width: 30rem;
+}
+.nav-item:nth-child(3) .nav-link {
+  filter: none;
+  color: var(--bg-spotify);
+  /* background-color: red; */
+}
+.navbar:hover .link-text {
+  display: inline-block;
+}
+.nav-item:last-child {
+  margin-top: auto;
+}
+.nav-item:first-child .nav-link {
+  color: #fff;
+}
+.nav-item:first-child .nav-link:hover {
+  color: var(--bg-spotify);
+}
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+  color: #1ed760;
+  background-color: var(--bg-secondary);
+}
+.navbar:hover > .navbar-nav > .nav-item:nth-child(3) {
+  background-color: var(--bg-secondary);
+}
+.nav-item:first-child {
+  background-color: var(--bg-spotify);
+}
+/* .nav-item:first-child .nav-link {
+      position: relative;
+  } */
+.nav-item:first-child .link-text {
+  transform: translateX(0);
+  margin-left: 3rem;
+  transition: all var(--transition-speed) ease;
+}
+.navbar:hover .nav-item:first-child .link-text {
+  animation: moveToRight var(--transition-speed) ease;
+  animation-fill-mode: backwards;
+}
+.navbar:hover .nav-item:first-child .logo {
+  transform: rotate(-180deg);
+}
+@keyframes moveToRight {
   from {
-    transform: rotate(0deg);
+    transform: translateX(-130%);
   }
   to {
-    transform: rotate(360deg);
+    transform: translateX(0%);
+  }
+}
+.nav-link:active {
+  transform: translateY(4px);
+}
+.link-text {
+  display: none;
+}
+.logo {
+  transform: rotate(0deg);
+  transition: all var(--transition-speed) ease;
+}
+.navbar:hover .logo {
+  transform: rotate(-180deg);
+}
+.link-text {
+  color: #fff;
+}
+.main {
+  background-color: var(--bg-secondary);
+  overflow-x: hidden;
+  max-width: 100%;
+  color: #fff;
+  padding-left: 12rem;
+  height: 100vh;
+  transition: all var(--transition-speed) ease;
+  overflow-x: hidden;
+}
+.main-container {
+  padding: 3rem;
+  width: 100%;
+  height: 100vh;
+  /* background-color: red; */
+}
+
+.section-container {
+  display: flex;
+  /* justify-content: space-between; */
+  margin-top: 3rem;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.section-btn {
+  cursor: pointer;
+  font-weight: 700;
+  opacity: 0.7;
+}
+.section-btn:hover {
+  opacity: 1;
+}
+.section-header {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-right: 25px;
+  cursor: pointer;
+}
+.section-header:hover {
+  color: #1ed760;
+}
+.content-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  /* align-items: center; */
+  gap: 1rem;
+  /* background-color: red; */
+}
+
+/* If user hovering mouse on top of sidebar, it will trigger following rules */
+.navbar:hover + .main {
+  padding-left: 32rem;
+}
+/* Media screen */
+@media only screen and (min-width: 60rem) {
+  .navbar {
+    top: 0;
+    height: 100vh;
+    width: 10rem;
+  }
+  .nav-item:last-child {
+    margin-top: auto;
+  }
+}
+
+@media only screen and (max-width: 60rem) {
+  .navbar {
+    bottom: 0;
+    min-width: 100vw;
+  }
+  .navbar-nav {
+    flex-direction: row;
+  }
+  .nav-item:first-child {
+    display: none;
+  }
+  .navbar:hover .link-text {
+    display: none;
+  }
+  .nav-item {
+    flex: 1 0 15%;
+  }
+  .main {
+    padding-left: 0;
   }
 }

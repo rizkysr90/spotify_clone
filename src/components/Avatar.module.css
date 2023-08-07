@@ -1,0 +1,35 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+p {
+  margin: 0;
+}
+.card {
+  background-color: blueviolet;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.avatar {
+  /* border: 1px solid #fff; */
+  border-radius: 100px;
+  width: 200px;
+  margin-top: 20px;
+}
+.avatar:hover {
+  border: 1px solid #fff;
+}
+.description {
+  background-color: cadetblue;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  text-align: left;
+}
+.avatar img {
+  object-fit: cover;
+  border-radius: 100%;
+  max-width: 100%;
+}

@@ -1,0 +1,41 @@
+.cardContent {
+  display: flex;
+  flex-grow: 1;
+  flex-basis: 40%;
+  height: 15rem;
+  padding: 1.5rem;
+  background-color: var(--bg-primary);
+  border-radius: 1rem;
+}
+.cardText {
+  margin-left: 1rem;
+  color: #fff;
+  overflow: hidden;
+  /* background-color: red; */
+  flex-basis: 70%;
+}
+.cardText p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+.cardHeader {
+  font-weight: 700;
+}
+.cardDescription {
+  opacity: 0.7;
+}
+.cardDescription > span {
+  display: block;
+  margin-top: 0.5rem;
+}
+.cardImg {
+  /* width: 40%; */
+  /* background-color: red; */
+  flex-basis: 30%;
+}
+.cardImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* height: 1.2rem; */
+}

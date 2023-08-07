@@ -1,0 +1,10 @@
+.main {
+  background-color: var(--bg-secondary);
+  overflow-x: hidden;
+  max-width: 100%;
+  color: #fff;
+  padding-left: 12rem;
+  height: 100vh;
+  transition: all var(--transition-speed) ease;
+  overflow-x: hidden;
+}
